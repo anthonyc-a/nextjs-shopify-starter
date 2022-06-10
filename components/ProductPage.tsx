@@ -11,7 +11,7 @@ const ProductPage: React.FC<Props> = ({ product }) => {
     <div className="lg:max-w-screen-xl mx-auto lg:py-16 lg:px-10 md:py-12 md:px-6 py-9 px-4 mt-5">
       <div className="flex justify-center items-center lg:flex-row flex-col gap-8">
         <div className="  w-full sm:w-96 md:w-8/12 lg:w-6/12 items-center">
-          <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600">
+          <p className=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600 mb-2">
             Home / Products / {product.title}
           </p>
           <div className="flex justify-between">
