@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <div className=" bg-gray-100 mt-10 ">
       <div className="max-w-6xl py-8 px-4 mx-auto lg:max-w-screen-xl">
-        <div className="flex justify-between items-center ">
-          <div className=" flex space-x-3 items-center">
+        <div className="md:flex justify-between items-center ">
+          <div className=" flex space-x-3 items-center mb-5 md:mb-0">
             <Link href="/" passHref>
               <a className="cursor-pointer flex items-center">
                 <svg
