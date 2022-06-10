@@ -19,6 +19,7 @@ const ProductCard = ({ product }: any) => {
               alt={altText}
               layout="fill"
               objectFit="cover"
+              priority
             />
           </div>
         </div>
