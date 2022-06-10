@@ -1,22 +1,4 @@
-import Link from "next/link";
-import { useContext } from "react";
-import { CartContext } from "../context/shopContext";
-import MiniCart from "./MiniCart";
-
-export default function Header() {
-  const { cart, cartOpen, setCartOpen } = useContext<any>(CartContext);
-
-  let cartQuantity = 0;
-  cart.map((item: any) => {
-    return (cartQuantity += item?.variantQuantity);
-  });
-
-  return (
-    <header className="border-b sticky top-0 z-20 bg-white">
-      <div className="flex items-center justify-between max-w-6xl pt-4 pb-3 px-4 mx-auto lg:max-w-screen-xl">
-        <Link href="/" passHref>
-          <a className="cursor-pointer flex items-center">
-            <svg
+<svg
               width={34}
               height={34}
               viewBox="0 0 34 34"
@@ -29,17 +11,3 @@ export default function Header() {
                 fill="#1F2937"
               />
             </svg>
-            <span className="text-lg font-bold">Shopify + Next.js</span>
-          </a>
-        </Link>
-        <a
-          className="text-md font-bold cursor-pointer"
-          onClick={() => setCartOpen(!cartOpen)}
-        >
-          Cart ({cartQuantity})
-        </a>
-        <MiniCart cart={cart} />
-      </div>
-    </header>
-  );
-}

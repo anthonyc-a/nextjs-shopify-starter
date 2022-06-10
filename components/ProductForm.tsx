@@ -99,11 +99,7 @@ export default function ProductForm({ product }: any) {
   }, [productInventory, selectedVariant]);
 
   return (
-    <div className="rounded-2xl p-4 shadow-lg flex flex-col w-full">
-      <h2 className="text-2xl font-bold">{product.title}</h2>
-      <span className="pb-3">
-        {formatter.format(product.variants.edges[0].node.priceV2.amount)}
-      </span>
+    <div className="flex flex-col w-full mt-5">
       {product.options.map(({ name, values }: any) => (
         <ProductOptions
           key={`key-${name}`}
@@ -121,13 +117,13 @@ export default function ProductForm({ product }: any) {
           onClick={() => {
             addToCart(selectedVariant);
           }}
-          className="bg-black rounded-lg text-white px-2 py-3 mt-3 hover:bg-gray-800"
+          className="bg-black rounded-lg text-white py-3 mt-10 hover:bg-gray-800"
         >
           Add To Cart
         </button>
       ) : (
-        <button className="rounded-lg text-white px-2 py-3 mt-3 bg-gray-800 cursor-not-allowed">
-          Sold out!
+        <button className="text-white rounded-lg py-3 mt-10 bg-gray-500 cursor-not-allowed">
+          Sold out
         </button>
       )}
     </div>

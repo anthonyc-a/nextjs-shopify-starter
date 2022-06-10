@@ -26,6 +26,45 @@ async function ShopifyData(query: any) {
   }
 }
 
+export async function getProductsInCollection() {
+  const query = `
+    {
+      collectionByHandle(handle: "frontpage") {
+        title
+        products(first: 25) {
+          edges {
+            node {
+              id
+              title
+              handle
+              priceRange {
+                minVariantPrice {
+                  amount
+                }
+              }
+              images(first: 5) {
+                edges {
+                  node {
+                    originalSrc
+                    altText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }`;
+
+  const response = await ShopifyData(query);
+
+  const allProducts = response.data.collectionByHandle.products.edges
+    ? response.data.collectionByHandle.products.edges
+    : [];
+
+  return allProducts;
+}
+
 export async function getAllProducts() {
   const query = `
   {

@@ -12,7 +12,7 @@ const ProductCard = ({ product }: any) => {
   return (
     <Link href={`/products/${handle}`}>
       <a className="group">
-        <div className="w-full bg-gray-200 overflow-hidden">
+        <div className="w-full rounded-xl bg-gray-200 overflow-hidden">
           <div className="relative group-hover:opacity-75 h-72">
             <Image
               src={originalSrc}
