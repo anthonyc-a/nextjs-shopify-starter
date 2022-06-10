@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { formatter } from "../utils/helper";
 
 interface Props {
   product: any;
@@ -11,7 +12,7 @@ const ProductPage: React.FC<Props> = ({ product }) => {
     product.collections.edges[0].node.products.edges[0].node.priceRange
       .minVariantPrice.amount;
 
-      console.log(product.images)
+  console.log(product.images);
 
   const addCount = () => {
     setCount((prev: number) => prev + 1);
@@ -38,7 +39,7 @@ const ProductPage: React.FC<Props> = ({ product }) => {
             {product.description}
           </p>
           <p className=" font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
-            £{price}0
+            {formatter.format(price)}
           </p>
 
           <div className="lg:mt-11 mt-10">
