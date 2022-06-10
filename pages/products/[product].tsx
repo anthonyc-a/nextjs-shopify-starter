@@ -3,11 +3,7 @@ import ProductPage from "../../components/ProductPage";
 import { getAllProducts, getProduct } from "../../lib/shopify";
 
 const Product = ({ product }: any) => {
-  return (
-    <Layout>
-      <ProductPage product={product} />
-    </Layout>
-  );
+  return <ProductPage product={product} />;
 };
 
 export async function getStaticPaths() {
