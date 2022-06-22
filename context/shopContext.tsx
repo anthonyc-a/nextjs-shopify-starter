@@ -21,6 +21,7 @@ export default function ShopProvider({ children }: any) {
 
       setCheckoutId(cartObject[1].id);
       setCheckoutUrl(cartObject[1].webUrl);
+      console.log(checkoutUrl);
     }
   }, []);
 
